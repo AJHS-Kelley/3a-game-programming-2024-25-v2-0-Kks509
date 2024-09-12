@@ -2,6 +2,8 @@
 
 
 Lives = 3
+score = 10000
+
 
 # Allow the user to input the score AS AN INTEGER.
 
@@ -15,11 +17,13 @@ Lives = 3
 # Output the score and number of lives to the screen.
 
 
-score = 10000
+if score <= 10000:
+    print("Lose 1 life.\n")
 
-if score < 10000:
-    print("Lose 1 life./n")
-if score > 10000:
-    print("Gain 1 life./n")
-if score > 100000:
-    print("Gain 2 Lives")
+elif score < 100001:
+    print("Gain 1 life.\n")
+
+else:
+    print("Gain 2 Lives.\n")
+
+print(f"Your score is {score}! You gained {Lives} Lives")
