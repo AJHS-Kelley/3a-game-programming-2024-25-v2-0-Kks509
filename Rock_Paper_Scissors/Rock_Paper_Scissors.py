@@ -50,18 +50,27 @@ putting a # in frontof 15 different times
 while playerScore < 5 and cpuScore < 5:
     print(f"{playerName} you have {playerScore} points.\nThe CPU has {cpuScore} points.\n")
     playerChoice = input("Please enter rock, paper, or scissors and press enter.\n").lower()
-    if playerChoice != "rock" or playerChoice != "paper" or playerChoice != "scissors":
+    if playerChoice != "rock" and playerChoice != "paper" and playerChoice != "scissors":
         playerChoice = input("Please enter rock, paper, or scissors and press enter.\n").lower()
-        if playerChoice != "rock" or playerChoice != "paper" or playerChoice != "scissors":
+        if playerChoice != "rock" and playerChoice != "paper" and playerChoice != "scissors":
             print("You are not following directions. Please try again.\n")
             exit()
         print(f"You have chosen {playerChoice}.\n")
     else:
         print(f"You have chosen {playerChoice}.\n")
     
-
-
     # let cpu select choice at random.
+    cpuChoice = random.randint(0, 2) # randomly select 0, 1, or 2.
+    if cpuChoice == 0:
+        cpuChoice = "rock"
+    elif cpuChoice == 1:
+        cpuChoice ="scissors"
+    elif cpuChoice ==2:
+        cpuChoice = "paper"
+    else:
+        print("Unable to determine CPU choice.\nPlease restart.\n")
+        exit()
+    print(f"CPU Choice: {cpuChoice}")
     # compare player choice to cpu choice
     # print the results to the screen
     # award point to winner and output results.
