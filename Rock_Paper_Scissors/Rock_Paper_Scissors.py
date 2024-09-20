@@ -70,7 +70,50 @@ while playerScore < 5 and cpuScore < 5:
     else:
         print("Unable to determine CPU choice.\nPlease restart.\n")
         exit()
-    print(f"CPU Choice: {cpuChoice}")
+    #print(f"CPU Choice: {cpuChoice}")
+        
     # compare player choice to cpu choice
-    # print the results to the screen
+    if playerChoice == "rock" and cpuChoice == "paper":
+        # CPU WINS
+        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        print("The CPU wins a point.\n")
+        cpuScore += 1
+    elif playerChoice == "rock" and cpuChoice == "scissors":
+        # PLAYER WINS
+        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        print("You win a point.\n")
+        playerScore += 1
+    elif playerChoice == "rock" and cpuChoice == "rock":
+        # DRAW
+        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        print("It's a draw.\n")
+    elif playerChoice == "scissors" and cpuChoice == "rock":
+        # CPU WINS
+        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        print("The CPU wins a point.\n")
+        cpuChoice += 1
+    elif playerChoice == "scissors" and cpuChoice == "paper":
+        # PLAYER WINS
+        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        print("You win a point.\n")
+        playerScore += 1
+    elif playerChoice == "scissors" and cpuChoice == "scissors":
+        # DRAW
+        print(f"The chose {cpuChoice} and you chose {playerChoice}.\n")
+        print("It's a draw.\n")
+    elif playerChoice == "paper" and cpuChoice == "rock":
+        # PLAYER WINS
+        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        print("You win a point.\n")
+        playerScore += 1
+    elif playerChoice == "paper" and cpuChoice == "paper":
+        # DRAW
+         print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+         print("It's a draw.\n")
+    elif playerChoice == "paper" and cpuChoice == "scissors":
+         print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+         print("The CPU wins a point.\n")
+         cpuScore += 1
+    
+
     # award point to winner and output results.
