@@ -2,7 +2,8 @@
 
 
 lives = 3 # Don't start with CAPITAL LETTERS. 
-score = 9000 # This should be an int(input()) line.  
+score = input("Enter score.\n").lower()
+print(f"Your score is.\n")
 
 
 # Allow the user to input the score AS AN INTEGER.
@@ -19,13 +20,15 @@ score = 9000 # This should be an int(input()) line.
 print(lives)
 if score <= 10000:
     print("Lose 1 life.\n")
+    lives += -1
     # What code will actually change the number of lives stored in computer memory?
-    lives += -1 
 elif score < 100001:
     print("Gain 1 life.\n")
+    lives += 1
     # What code will actually change the number of lives stored in computer memory?
 else:   
     print("Gain 2 Lives.\n")
+    lives += 2
     # What code will actually change the number of lives stored in computer memory?
 
 print(f"Your score is {score}! You now have {lives}. ")

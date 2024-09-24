@@ -14,7 +14,7 @@ cpuChoice = None
 
 # PLAYER NAME INPUT
 playerName = input("Please type your name and press enter.\n")
-print(f"Hello{playerName}!\n")
+print(f"Hello{playerName}!.\n")
 isCorrect = input("Is that correct? Type yes or no and press enter.\n").lower()
 
 # .lower() can turn ALL input into lowercase.
