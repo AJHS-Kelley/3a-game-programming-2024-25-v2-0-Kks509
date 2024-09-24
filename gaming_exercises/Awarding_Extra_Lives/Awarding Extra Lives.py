@@ -26,10 +26,9 @@ elif score < 100001:
     print("Gain 1 life.\n")
     lives += 1
     # What code will actually change the number of lives stored in computer memory?
-else:   
+else score >= 100000:
     print("Gain 2 Lives.\n")
     lives += 2
     # What code will actually change the number of lives stored in computer memory?
-
 print(f"Your score is {score}! You now have {lives}. ")
 print(lives)
