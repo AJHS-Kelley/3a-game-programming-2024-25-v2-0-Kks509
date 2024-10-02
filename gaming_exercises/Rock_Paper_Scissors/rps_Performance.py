@@ -91,7 +91,7 @@ while loopCount < loopsReq:
     loopCount += 1
     
     
-print(f"Your Final Score: {playerScore} CPU Final Score: {cpuScore}.\n ")
+print(f"Your Final Score: {playerScore} CPU Final Score: {cpuScore}. draws is {numDraws}\n ")
 if playerScore > cpuScore:
     print(f"Congratulations. a winner is you!\n")
 elif cpuScore > playerScore:
