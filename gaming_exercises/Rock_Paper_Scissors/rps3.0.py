@@ -25,7 +25,6 @@ def playerName() -> str: # Function Signature -- name of function
         playerName = input("Please type your name and press enter.\n")
     return playerName
 
-# calling the function
 playerName = playerName()
 
 # THE RULES using MULTI-LINE STRINGS
@@ -80,13 +79,11 @@ def pickWinner(playerChoice: str, cpuChoice: str) -> str:
         # CPU WINS
         print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
         print("The CPU wins a point.\n")
-        cpuScore += 1
         return "CPU Wins"
     elif playerChoice == "rock" and cpuChoice == "scissors":
         # PLAYER WINS
         print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
         print("You win a point")
-        playerScore += 1
         return "Player Wins"
     elif playerChoice == "rock" and cpuChoice == "rock":
         # DRAW
@@ -97,13 +94,11 @@ def pickWinner(playerChoice: str, cpuChoice: str) -> str:
         # CPU WINS
         print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
         print("The CPU wins a point.\n")
-        cpuScore += 1
         return "CPU Wins"
     elif playerChoice == "scissors" and cpuChoice == "paper":
         # PLAYER WINS
         print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
         print("You win a point.\n")
-        playerScore += 1
         return "Player Wins"
     elif playerChoice == "scissors" and cpuChoice == "scissors":
         # DRAW
@@ -114,7 +109,6 @@ def pickWinner(playerChoice: str, cpuChoice: str) -> str:
         # PLAYER WINS
         print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
         print("You win a point.\n")
-        playerScore += 1
         return "Player Wins"
     elif playerChoice == "paper" and cpuChoice == "paper":
         # DRAW
@@ -125,7 +119,6 @@ def pickWinner(playerChoice: str, cpuChoice: str) -> str:
         # CPU WINS
         print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
         print("The CPU wins a point.\n")
-        cpuScore += 1
         return "CPU Wins"
     else:
         print("Unable to determine a winner. Please restart.\n")
@@ -141,19 +134,36 @@ def score(winner: str) -> int:
         score = 0
     return score
 
- # MAIN GAME LOOP
-while playerScore < 5 and cpuScore < 5:
-    print(f"{playerName} you have {playerScore} points.\nThe CPU has {cpuScore} points.\n")
+def matchWinner(playerScore: int, cpuScore: int) -> bool:
+    """This function determines if a player has won the game or not by scoring 5 points."""
+    if playerScore >= 5:
+        print("Congratulations! You are the winner.\n")
+        return True
+    elif cpuScore >= 5:
+        print("Sadly, you have been defeated by the CPU.\n")
+        return True
+    else: # No winner yet.
+        return False
+
+def playGame(playerScore: int, cpuScore: int) -> None:
+    """This function will use all other functions to play Rock, Paper, Scissors. """
+    while True:
+        cpuPick = cpuChoice()
+        playerPick = playerChoice()
+        roundWinner = pickWinner(playerPick, cpuPick)
+        if roundWinner == "Player Wins":
+            playerScore += score(roundWinner)
+        if roundWinner == "CPU Wins":
+            cpuScore += score(roundWinner)
+
+        print(f"Player Score: {playerScore}\n")
+        print(f"CPU Score: {cpuScore}\n")
+
+        if matchWinner(playerScore, cpuScore) == True:
+            break
+
+playGame(playerScore, cpuScore)
 
 
-
-print(f"Your Final Score: {playerScore}\nCPU Final Score: {cpuScore}.\n")
-if playerScore > cpuScore: 
-    print(f"Congratulations {playerName}, a winner is you!\n")
-elif cpuScore > playerScore:
-    print(f"The CPU wins. You are a disappointment to all.\n")
-else:
-    print("Unable to determine a winner.\nPlease restart.\n")
-    exit()
 
 
