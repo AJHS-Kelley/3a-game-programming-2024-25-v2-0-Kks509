@@ -108,12 +108,12 @@ while playerScore < 5 and cpuScore < 5:
         playerScore += 1
     elif playerChoice == "paper" and cpuChoice == "paper":
         # DRAW
-         print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
-         print("It's a draw.\n")
+        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        print("It's a draw.\n")
     elif playerChoice == "paper" and cpuChoice == "scissors":
-         print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
-         print("The CPU wins a point.\n")
-         cpuScore += 1
+        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        print("The CPU wins a point.\n")
+        cpuScore += 1
     
 
     # award point to winner and output results.
