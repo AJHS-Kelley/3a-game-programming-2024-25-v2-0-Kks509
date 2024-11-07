@@ -13,17 +13,16 @@ def displayIntro():
     print('in the tundra there is a goblin and a axe')
     print()
 
-def choosePath():
+def chosenlocation():
     location = ''
     while location != '1' and location != '2' and location != '3':
-        print('Which path will you take? (1, 2 or, 3)')
+        print('Which path will you take? (1, 2 or, 3) location 1 is cave 1 location 2 is cave 2 location 3 is a tundra')
         cave = input()
         tundra = input()
     return tundra
 
-def checkPath(chosenPath):
-    if chosenPath == tundra:
-        print('You approach the tundra')
+def checkPath(location):
+    print('You approach the location 3')
     print('You approach the cave...')
     time.sleep(2)
     print('It is dark and spooky...')
@@ -34,7 +33,7 @@ def checkPath(chosenPath):
 
     friendlyCave = random.randint(1, 2,)
 
-    if chosenPath == str(friendlyCave):
+    if location == str(friendlyCave):
         print('Gives you his treasure!')
 
     else:
