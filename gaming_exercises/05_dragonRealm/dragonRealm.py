@@ -4,32 +4,46 @@
 import random
 import time
 
+hasAxe = False
+location = None
 def displayIntro():
 
     print('You are in a land full of dragons. In front of you,')
     print('you see two caves and a tundra. In one cave, the dragon is friendly')
     print('and will share his treasure with you. The other dragon')
     print('is greedy and hungry, and will eat you on sight.')
-    print('in the tundra there is a goblin and a axe')
     print()
 
-def chosenlocation():
+def chosenLocation():
     location = ''
     while location != '1' and location != '2' and location != '3':
         print('Which path will you take? (1, 2 or, 3) location 1 is cave 1 location 2 is cave 2 location 3 is a tundra')
-        cave = input()
-        tundra = input()
-    return tundra
+        location = input()
+    return location
 
 def checkPath(location):
-    print('You approach the location 3')
-    print('You approach the cave...')
+    if location == "1":
+        print('You approach the location 1')
+    print('You approach the tundra...')
     time.sleep(2)
-    print('It is dark and spooky...')
+    print('It is cold...')
+    time.sleep(1)
+    print('you find a axe')
+
+pickUpItem = ("You see an axe on the ground. Do you want to pick it up? Type 1 for yes or 2 for no,")
+if  pickUpItem == "yes":
+    hasAxe = True
+
+if hasAxe:
+    print("you one shotted the goblin")
+else:
+    print("The goblin squashed you like a bug")
     time.sleep(2)
-    print('A large dragon jumps out in front of you! He opens his jaws and...')
+    print('A goblin jumps out the ground and attacks you...')
     print()
     time.sleep(2)
+
+    
 
     friendlyCave = random.randint(1, 2,)
 
@@ -45,7 +59,7 @@ playAgain = 'yes'
 
 while playAgain == 'yes' or playAgain == 'y':
     displayIntro()
-    caveNumber = choosePath()
+    caveNumber = chosenLocation()
     checkPath(caveNumber)
     print('Do you want to play again? (yes or no)')
     playAgain = input()
