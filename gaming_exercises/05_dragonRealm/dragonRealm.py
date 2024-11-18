@@ -3,6 +3,22 @@
 
 import random
 import time
+import datetime 
+
+# SAVING THE DATA TO A FILE
+# STEP 1 -- Create the file name to use.
+logFileName = "dragonRealmLog" + str(time.time()) + ".txt"
+# logFileName = "dragonRealmLog.txt"
+# EXAMPLE: dragonRealmLog1132AM.txt
+
+# STEP 2 -- Create / Open the File to save the data.
+saveData = open(logFileName, "x")
+# FILE MODES
+# "x" CREATES FILE, IF FILE EXISTS, EXIT WITH ERROR MESSAGE. 
+# "w" CREATES FILE, IF FILE EXISTS, ERASE AND OVERWRITE FILE CONTENTS.
+# "a" CREATES FILE, IF FILE EXISTS, APPEND DATA TO THE FILE.
+
+saveData.write("GAME STARTED" + " " + str(datetime.datetime.now))
 
 hasAxe = False
 location = None
@@ -73,3 +89,7 @@ if hasAxe:
     print("you one shotted the goblin")
 else:
     print("The goblin squashed you like a bug")
+
+
+saveData.write
+saveData.close()
