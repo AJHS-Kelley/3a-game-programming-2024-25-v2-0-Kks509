@@ -1,5 +1,6 @@
 # Dragon Realm, <STUDENT_NAME>, v0.0
 # Based on https://inventwithpython.com/chapter6.html by Al Sweigart
+# You need to finish by Friday. 
 
 import random
 import time
@@ -80,6 +81,7 @@ while playAgain == 'yes' or playAgain == 'y':
     print('Do you want to play again? (yes or no)')
     playAgain = input()
 
+# This code needs to be part of the loop.  Move it 1 Tab to the left.  
 hasAxe = False
 pickUpItem = input("You see an axe on the ground. Do you want to pick it up? Type yes or no,")
 if pickUpItem == "yes":
