@@ -89,7 +89,7 @@ while playAgain == 'yes' or playAgain == 'y':
     print('Do you want to play again? (yes or no)')
     playAgain = input()
 
-# This code needs to be part of the loop.  Move it 1 Tab to the left.  
+# This code needs to be part of the loop.  Move it 1 Tab to the left  
 
 
 saveData.write
