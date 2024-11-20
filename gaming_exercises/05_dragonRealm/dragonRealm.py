@@ -36,31 +36,39 @@ def chosenLocation():
     while location != '1' and location != '2' and location != '3':
         print('Which path will you take? (1, 2 or, 3) location 1 is cave 1 location 2 is cave 2 location 3 is a tundra')
         location = input()
-    return location
+    
 
 def checkPath(location):
-    if location == "1":
-        print('You approach the location 1')
-    print('You approach the tundra...')
-    time.sleep(2)
-    print('It is cold...')
-    time.sleep(1)
-    print('you find a axe')
+    if location == "3":
+        print('You approach the tundra...')
+        time.sleep(1)
+        print('It is cold...')
+        time.sleep(1)
+        print('you find a axe')
+        time.sleep(1)
+    print('do you want to pick up the axe (yes or no)')
 
-pickUpItem = ("You see an axe on the ground. Do you want to pick it up? Type 1 for yes or 2 for no,")
-if  pickUpItem == "yes":
+    pickUpAxe = ("yes")
+    if  pickUpAxe == "yes":
+        hasAxe = True
+    if hasAxe:
+        print("you one shotted the goblin")
+    else:
+        print("The goblin squashed you like a bug")
+        time.sleep(1)
+        print('A goblin jumps out the ground and attacks you...')
+        time.sleep(1)
+
+    hasAxe = False
+pickUpItem = input("You see an axe on the ground. Do you want to pick it up? Type yes or no,")
+if pickUpItem == "yes":
     hasAxe = True
 
 if hasAxe:
     print("you one shotted the goblin")
 else:
     print("The goblin squashed you like a bug")
-    time.sleep(2)
-    print('A goblin jumps out the ground and attacks you...')
-    print()
-    time.sleep(2)
 
-    
 
     friendlyCave = random.randint(1, 2,)
 
@@ -82,15 +90,6 @@ while playAgain == 'yes' or playAgain == 'y':
     playAgain = input()
 
 # This code needs to be part of the loop.  Move it 1 Tab to the left.  
-hasAxe = False
-pickUpItem = input("You see an axe on the ground. Do you want to pick it up? Type yes or no,")
-if pickUpItem == "yes":
-    hasAxe = True
-
-if hasAxe:
-    print("you one shotted the goblin")
-else:
-    print("The goblin squashed you like a bug")
 
 
 saveData.write
