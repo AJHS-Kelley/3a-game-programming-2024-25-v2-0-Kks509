@@ -22,6 +22,7 @@ def helloWorldMulti(): # FUNCTION SIGNATURE
     elif language == "j":
         print("In Japanese:\nKon'nichiwa sekai")
     else:
+        pass
 
 #helloWorldMulti()
 
