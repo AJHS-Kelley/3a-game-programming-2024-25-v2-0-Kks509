@@ -36,8 +36,6 @@ def chosenLocation():
     while location != '1' and location != '2' and location != '3':
         print('Which path will you take? (1, 2 or, 3) location 1 is cave 1 location 2 is cave 2 location 3 is a tundra')
         location = input()
-    
-
 def checkPath(location):
     if location == "3":
         print('You approach the tundra...')
@@ -46,29 +44,24 @@ def checkPath(location):
         time.sleep(1)
         print('you find a axe')
         time.sleep(1)
-    print('do you want to pick up the axe (yes or no)')
-
-    pickUpAxe = ("yes")
-    if  pickUpAxe == "yes":
+    pickUpItem = ('You see an axe on the ground. Do you want to pick it up? Type yes or no,./n')
+    if pickUpItem == "yes":
         hasAxe = True
-    if hasAxe:
+    pickUpItem = "yes"
+    if  pickUpItem == "yes":
+        hasAxe = True
         print("you one shotted the goblin")
-    else:
+        pickUpItem == True
+    
+    elif hasAxe == "no":
         print("The goblin squashed you like a bug")
         time.sleep(1)
         print('A goblin jumps out the ground and attacks you...')
         time.sleep(1)
-
     hasAxe = False
-pickUpItem = input("You see an axe on the ground. Do you want to pick it up? Type yes or no,")
-if pickUpItem == "yes":
-    hasAxe = True
-
-if hasAxe:
-    print("you one shotted the goblin")
-else:
-    print("The goblin squashed you like a bug")
-
+    pickUpItem = ('You see an axe on the ground. Do you want to pick it up? Type yes or no,./n')
+    if pickUpItem == "yes":
+        hasAxe = True
 
     friendlyCave = random.randint(1, 2,)
 
@@ -77,7 +70,6 @@ else:
 
     else:
         print('Gobbles you down in one bite!')
-
 
 
 playAgain = 'yes'
