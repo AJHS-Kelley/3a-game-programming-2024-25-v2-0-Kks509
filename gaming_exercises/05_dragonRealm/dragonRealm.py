@@ -8,12 +8,12 @@ import datetime
 
 # SAVING THE DATA TO A FILE
 # STEP 1 -- Create the file name to use.
-logFileName = "dragonRealmLog" + str(time.time()) + ".txt"
+logFileName = "dragonRealmLog.txt" # I changed your file name. 
 # logFileName = "dragonRealmLog.txt"
 # EXAMPLE: dragonRealmLog1132AM.txt
 
 # STEP 2 -- Create / Open the File to save the data.
-saveData = open(logFileName, "x")
+saveData = open(logFileName, "a") # CHANGED TO A MODE
 # FILE MODES
 # "x" CREATES FILE, IF FILE EXISTS, EXIT WITH ERROR MESSAGE. 
 # "w" CREATES FILE, IF FILE EXISTS, ERASE AND OVERWRITE FILE CONTENTS.
